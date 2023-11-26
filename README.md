@@ -39,7 +39,7 @@ The scripts consist of three parts.
 The script should create a new epub with _rev at the end of it having cleaned out all the crud that Indesign likes to add and prepped it according to my preferences. See list_clean_indesign.py for the specific search and replaces performed.
 
 ## Libraries
-os, re, zipfile
+These are the python libraries used in the scripts so far: os, re, zipfile. I *believe* they are all part of the default python install.
 
 ## Notes
 - I put the word BREAK in the InDesign file where context breaks (editorial breaks) occur and the script replaces them with `<hr/>`'s
@@ -68,4 +68,4 @@ It produces an epub with proper structure and aria-roles based on the filenames 
 ## Final Point
 I maintain a local website based on markdown notes and the fantastic mkdocs docker that has ALL my defaults in it so I can cut and paste code as necessary. I *strongly* urge you to do so as well because consistency is key to making this kind of workflow be successful.
 
-![html](/notescreenshot.png "html")
+![Screenshot of markdown-based website](/images/notescreenshot.png)
