@@ -12,24 +12,27 @@ list_delete=[
     [' CharOverride-\d+',''],
     ['style=".*?"',''],
 
-    ['<p class="para" lang="en-US">','<p>'],
-    ['<p class="copyright" lang="en-US">','<p class="copyright">'],
-    ['<p class="no-indent" lang="en-US">','<p class="no-indent">'],
+    ['<p class="para" lang=".*?">','<p>'],
+    ['<p class="copyright" lang=".*?">','<p class="copyright">'],
+    ['<p class="no-indent" lang=".*?">','<p class="no-indent">'],
     ['lang="en-CA" xml:lang="en-CA"',''],
     ['lang="en-US" xml:lang="en-US"',''],
     ['lang="en-GB" xml:lang="en-GB"',''],
     ['xml:lang="en-CA"|xml:lang="en-US"|xml:lang="en-GB"',''],
     ['ParaOverride-\d+',''],
     ['class="Basic-Paragraph "',''],
-    ['<i class=".*?(?=>)>','<i>'],
-    ['<em.*?(?=>)>','<em>'],
+    ['<i class="italics"(?=>)>','<i>'],
+    ['<em class="em"(?=>)>','<em>'],
+    ['<b class="bold"(?=>)>','<b>'],
+    ['<strong class="strong"(?=>)>','<strong>'],
 
+    ['<small class=".*?"(?=>)>>','<small>'],
     ['<em> ',' <em>'],
     ['<i> ',' <i>'],
-    ['<small class=".*?">','<small>'],
     ['class="body-text"',''],
     ['<figure id="_idContainer\d+" class="full">','<figure class="full">'],
 
+    [' role="presentation"',""]
     ['<p(?:\s)?(?:class=".*?")?>PAGEBREAK</p>','<hr/>'],
     ['<p(?:\s)?(?:class=".*?")?>BREAK</p>','<hr/>'],
 ]

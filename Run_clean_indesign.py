@@ -1,4 +1,4 @@
-import os, re
+import os, re, shutil
 from epub_functions import getlistoffiles
 from epub_functions import extract as extr
 from epub_functions import compress 
@@ -14,7 +14,7 @@ from list_clean_indesign import list_delete, list_replace
 
 ## Get input file
 epubFile = input("Copy & paste path of epub (right-click -> opt+copy): ")
-# epubFile="/Volumes/Orca/Working/test/Walls-working.epub"
+# epubFile="/Volumes/Working/test/epub_file_name.epub"
 
 ## Use function to Extract epub files
 extr(epubFile)
@@ -31,8 +31,6 @@ os.chdir(Exportfolder)
 epubfiles = getlistoffiles(Exportfolder)
 # print (epubfiles)
 
-# exit()
-
 #Search all files and apply regex from list
 for filename in epubfiles:
     with open(filename, 'r') as inp:
@@ -48,9 +46,8 @@ for filename in epubfiles:
             search_text = r'searchtermv'
 
             data = re.sub(searchtermv, replace_text, data)
-            # exit()
 
-        #loop through regex replacements
+        #loop through regex replacements list
         for regex1 in list_replace:
             searchtermv =  regex1[0]
             replacetermv = regex1[1]
@@ -59,14 +56,16 @@ for filename in epubfiles:
 
             data = re.sub(searchtermv, replace_text, data)
             # print (searchtermv, replace_text)
-            # exit()
-        # print (data)
+
         with open(filename, 'w') as output:
             output.write(data)
             output.close()
         # print(data)
 
-# run Standard ebooks clean command before recompressing folder
-os.system("se clean .")
+# run Standard ebooks clean command before recompressing folder. This is a script from the Standard ebooks toolset. It can be dangerous becasue it will lowercase all the style names in the css file but not in the epub xhtml files themselves. And of course you have to install the entire toolset—which I think you should do  because you really want to help contribute to the project :-) https://standardebooks.org/contribute
+# os.system("se clean .")
+
 ### recompress and rename epub
 compress(Exportfolder)
+### delete working folder
+shutil.rmtree(Exportfolder)

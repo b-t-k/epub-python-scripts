@@ -1,5 +1,5 @@
 # epub python scripts
- A series of scripts to facilitate epub creation from InDesign. I am slowly cleaning up the scripts to make them fit (mostly) for public use if any one want to incorporate them into their workflow.
+ A series of scripts to facilitate epub creation from InDesign. I am *slowly* cleaning up the scripts to make them fit (mostly) for public use if anyone want to incorporate them into their workflow.
 
  This first part simply deals with cleaning up the InDesign file.
 
@@ -34,9 +34,9 @@ The scripts consist of three parts.
 - HTML andCSS: un check "Preserve Local Overrides"
 
 ### Epub
-- rightclick the epub (on a Mac) and hold teh option key down to get path
+- rightclick the epub (on a Mac) and hold the option key down to get path
 - run `Run_clean_indesign.py` and paste the path in at the prompt.
-The script should create a new epub with _rev at the end of it having cleaned out all the crud that Indesign likes to add and prepped it according to my preferences. See list_clean_indesign.py for the specific search and replaces performed.
+The script should create a new epub with *_rev* at the end of it having cleaned out all the crud that Indesign likes to add and prepped it according to my preferences. See list_clean_indesign.py for the specific search and replaces performed.
 
 ## Libraries
 These are the python libraries used in the scripts so far: os, re, zipfile. I *believe* they are all part of the default python install.
@@ -51,7 +51,7 @@ After I have cleaned the file up via the script I open it in Sigil ([https://sig
 1. go through and add split file markers then spilt the files
 2. rename the files according to a standard template (so you can autoomate the next section)
 3. Fix any oddities with the heads (`<h1>`'s etc.) so they are at the appropriate position
-3. run (from here: [https://www.mobileread.com/forums/showthread.php?t=265237](https://www.mobileread.com/forums/showthread.php?t=265237)) the PageList plugin to build the page list
+3. run (from here: [https://laurabrady.ca/blog/building-a-page-list](https://laurabrady.ca/blog/building-a-page-list)) the PageList plugin to build the page list
 4. save the file
 
 ### Run Clean Script
@@ -63,7 +63,7 @@ I generally toss the css and replace it with my own standard css and modify it f
 
 It produces an epub with proper structure and aria-roles based on the filenames as well as adds in a digital rights page. Making it completely accessibe is then just a matter of fixing a few items and updateing the .opf file
 
-
+**NOTE** Line 70 in Run_clean_indesign is `os.system("se clean .")`. This invokes a tool from [Standard Ebooks](https://standardebooks.org/contribute)' toolset that cleans up the code. I am planning on replacing it with something more common becasue it has a bad habit of lowercasing css which is fine for me but can cause problems if that isn't part of your standard workflow. And if you want to contribute to creating well-formed public domain ebooks, I encourage you to volunteer. I guarantee you will learn some things.
 
 ## Final Point
 I maintain a local website based on markdown notes and the fantastic mkdocs docker that has ALL my defaults in it so I can cut and paste code as necessary. I *strongly* urge you to do so as well because consistency is key to making this kind of workflow be successful.
