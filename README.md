@@ -1,9 +1,11 @@
 # epub python scripts
  A series of scripts to facilitate epub creation from InDesign. I am *slowly* cleaning up the scripts to make them fit (mostly) for public use if anyone want to incorporate them into their workflow.
+ 
+**NOTE** These scripts are here primarily as an example fo the sorts of things you can do with epub production and python. They may not work the way you expect them to but hopefully you can use them as an example that will work for your workflow.
 
  This first part simply deals with cleaning up the InDesign file.
 
-*NOTE* I am **not** a programmer. I am sure that these scripts are filled with bad practices and even worse error checking.
+***WARNING* I am *not* a programmer. I am sure that these scripts are filled with bad practices and even worse error checking.**
 
 ## Usage
 Right now I have the script folder open in [Visual Studio Code](https://code.visualstudio.com/) and then run the  appropriate script from its python interface and then copy and paste the file path into the prompt.
