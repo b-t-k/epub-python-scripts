@@ -1,4 +1,5 @@
 import os, zipfile
+from lxml import etree #for Title extract
 
 ### Extract files from epub
 def extract(inputFolder):
@@ -47,3 +48,41 @@ def getlistoffiles(Exportfolder):
     # print(items)
     return(items)
 
+# Function to extract title metadata
+# https://stackoverflow.com/questions/3114786/python-library-to-extract-epub-information
+def getEpubtitle(epubFile):
+    zip_content = zipfile.ZipFile(epubFile)
+
+    def xpath(element, path):
+        return element.xpath(
+            path,
+            namespaces={
+                "n": "urn:oasis:names:tc:opendocument:xmlns:container",
+                "pkg": "http://www.idpf.org/2007/opf",
+                # "dc": "http://purl.org/dc/elements/1.1/",
+            },
+        )[0]
+     
+    # find the contents metafile
+    cfname = xpath(
+        etree.fromstring(zip_content.read("META-INF/container.xml")),
+        "n:rootfiles/n:rootfile/@full-path",
+    ) 
+
+    # grab the metadata block from the contents metafile
+    metadata = xpath(
+        etree.fromstring(zip_content.read(cfname)), "/pkg:package/pkg:metadata"
+    )
+
+    #set namespace
+    ns = {'dc': 'http://purl.org/dc/elements/1.1/'}
+
+    # Use XPath to find the dc:title element
+    title_elements = metadata.xpath('//dc:title', namespaces=ns)
+
+    # Check if dc:title exists and return its text or "missing" if not found
+    if title_elements:
+        print(title_elements)
+        return title_elements[0].text
+    else:
+        return "title_missing"
