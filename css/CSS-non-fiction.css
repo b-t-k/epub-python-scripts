@@ -1,0 +1,689 @@
+
+/* *************
+DEFAULT STYLES - NON-FICTION
+************* */
+
+@font-face{
+	font-family: font_name_1;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../font/FONT_NAME.otf");
+}
+
+@font-face{
+	font-family: font_name_2;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../font/FONT_NAME.otf");
+}
+
+@font-face{
+	font-family: font_name_3;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../font/FONT_NAME.otf");
+}
+
+/* GENERAL */
+@page {
+	margin: 1em;
+}
+
+body {
+	adobe-hyphenate: auto;
+	font-family: serif;
+	font-variant-numeric: oldstyle-nums;
+	hyphens: auto;
+	-epub-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	orphans: 1;
+	widows: 1;
+}
+
+h1,h2,h3,h4,h5 {
+	adobe-text-layout: optimizespeed;
+/* For Nook */
+	break-after: avoid;
+	break-inside: avoid;
+	font-family: sans-serif;
+	font-weight: normal;
+	hyphens: none  !important;
+	-epub-hyphens: none;
+	-moz-hyphens: none  !important;
+	-webkit-hyphens: none  !important;
+	margin: 0;
+	padding: 0;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+	text-align: center;
+	text-indent: 0;
+}
+
+p,ul,li,dl {
+	font-size: .9rem;
+	margin: 0;
+	hyphenate-limit-chars: 6 3 2;
+	-ms-hyphenate-limit-chars: 6 3 2;
+	-webkit-hyphenate-limit-chars: 6 3 2;
+	hyphenate-limit-last: always;
+	-ms-hyphenate-limit-last: always;
+	-webkit-hyphenate-limit-last: always;
+	hyphenate-limit-lines: 3;
+	-ms-hyphenate-limit-lines: 3;
+	-webkit-hyphenate-limit-lines: 3;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+hr + p,
+p.no-indent {
+	text-indent: 0;
+}
+
+i > i,
+em > i,
+i > em{
+	font-style: normal;
+}
+
+/* Body Matter */
+p {
+	text-indent: 1.2rem;
+}
+
+a {
+	color: #666666  !important;
+	font-size: inherit;
+	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: #006666;
+}
+
+hr {
+	border: none;
+	margin: 1em 0;
+	width: 0;
+}
+
+.glossary-term, 
+.bold-italic {
+	font-style: italic;
+	font-weight: bold;
+}
+
+small,
+.smallcaps{
+  font-size: 0.85em;
+  text-transform:uppercase;
+}
+
+strong,
+.upper,
+.allcaps{
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+/* Design cheats */
+.sb {
+	margin-top: 1em;
+}
+
+.center{
+	text-align:center;
+	text-indent:0;
+}
+.lowercase{
+	text-transform:lowercase;
+}
+
+/* Headings */
+h1.front-back {
+	color: #d73b2d;
+	font-family: font_name_1,sans-serif;
+	font-size: 2.583em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.4;
+	margin: 10% 0 1em;
+	text-align: left;
+}
+
+h1.chapter-num {
+	font-family: font_name_1,sans-serif;
+	font-size: 3.5em;
+	font-weight: normal;
+	line-height: 1em;
+	margin: 10% 0 .5em 0;
+}
+
+/* Adjust the heading size for very small screens, such as iPhone (~375px width) */
+@media (max-width: 375px) {
+	h1.front-back,
+	h1.chapter-num {
+		font-size: 120%; /* Smaller font size for small viewports */    hyphens: auto !important;
+		-epub-hyphens: auto;
+		-moz-hyphens: auto !important;
+		-webkit-hyphens: auto !important;
+		word-break: break-word; /* Add this */
+		overflow-wrap: break-word; /* Add this */
+	}
+  }
+
+span.chapter-title {
+	font-family: font_name_1,sans-serif;
+	font-size: 2.5rem;
+	font-weight: normal;
+	line-height: 0.9;
+	margin: 0 0 .5em;
+	text-transform: uppercase;
+}
+
+h2.subhead {
+	font-family: font_name_1,sans-serif;
+	font-size: 1.8em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 0.9;
+	margin: .75em 0 .4em;
+	text-align: left;
+}
+
+h2.resources {
+	font-family: sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 1em 0 0 0;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+h3.subhead{
+	font-family: font_name_1,sans-serif;
+	font-size: 1.2em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: 1em 0 .25em;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+/* PAGES */
+/* digitalrights.xhtml */
+section.digitalrights {
+	display: block;
+	margin: 15% auto;
+	max-width: 80%;
+}
+
+section.digitalrights p{
+	text-indent:0;
+	margin-bottom:1em;
+}
+
+/* Title Page */
+.halftitlepage{
+	margin: 15% auto;
+	width: 50%;
+}
+
+.titlepage{
+	margin: 15% auto;
+	width: 50%;
+}
+
+span.subtitle,
+h2.subtitle{
+	font-family: font_name_1, sans-serif;
+	font-size: 2em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 0.9;
+	margin: .5em 0 0;
+	text-align: center;
+}
+
+h2.author{
+	color: #005baa;
+	font-family: font_name_1, sans-serif;
+	font-size: 1.5em;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.175;
+	margin: 1em 0em;
+	text-align: center;
+	text-indent: 0;
+	text-transform: uppercase;
+}
+h2.translator,
+h2.illustrator{
+	color: #005baa;
+	font-family: font_name_1, sans-serif;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: 1em 0 2em;
+	text-align: center;
+	text-indent: 0;
+	text-transform: uppercase;
+}
+span.by{
+	display: block;
+    font-size: .8em;
+	text-transform: initial;
+}
+
+/* Copyright */
+.copyright {
+	font-size: 0.75em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.18;
+	margin: .5em 2em;
+	text-align: center;
+	text-indent: 0;
+}
+
+/* Dedication */
+p.dedication {
+	font-family: serif;
+	font-size: 1em;
+	font-style: italic;
+	margin: 10% 0;
+	text-align: center;
+	text-indent:0;
+}
+
+/* Contents */
+
+ol.toc,
+ol.contentlist{
+	list-style: none;
+}
+
+ol.toc a,
+ol.contentlist a{
+	font-weight:normal;
+}
+
+li.toc-fb {
+	font-family: sans-serif;
+	font-size: 1em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: .25em 0 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+li.toc-1 {
+	font-family: sans-serif;
+	font-size: 1em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: .25em 0 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+li.toc-2 {
+	font-family: sans-serif;
+	font-size: 0.85em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.5;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Glossary & Resources*/
+ul.resources,
+ul.glossary{
+	padding-left:0;
+}
+
+li.glossary,
+li.resources{
+	line-height:1.2;
+	list-style-type: none; /* Remove bullets */
+	margin: .5em 0;
+	padding-left: 2em;
+	text-indent: -2em;
+}
+
+p.resources-disclaimer,
+p.resource-disclaimer {
+	font-family: serif;
+	font-size:0.75em;
+	font-style:italic;
+	line-height:1.5;
+	margin:1em 0;
+	text-align:center;
+	text-indent:0;
+}
+
+dt {
+    float: left;
+    clear: left;
+    margin-left: .5em;
+    font-weight: bold;
+} 
+
+dt::after {
+    content: "—"; 
+} 
+
+dd {
+    margin:0 2em;
+    padding:0 0em .5em;
+}
+
+/* index */
+ul.index{
+	margin-top:1em;
+}
+
+.index-1{
+	list-style-type: none; /* Remove bullets */
+	margin-left: 1.5em;
+	text-indent: -1.5em;
+}
+
+.index-2{
+	list-style-type: none; /* Remove bullets */
+	margin-left: 2.5em;
+	text-indent: -1.5em;
+}
+
+b.index{
+	font-style: italic;
+	text-decoration: underline;
+}
+
+/* about-the-author.xhtml */
+section.author{
+	background: #fffff1;
+	padding: 1.5em;
+}
+
+span.author-name {
+	color: #0a0a8b;
+	font-family: suti,sans-serif;
+	font-size: 1.4em;
+	font-style: normal;
+}
+
+/* IMAGES */
+/* Cover */
+figure.cover-img {
+	display: block;
+	text-align: center;
+}
+
+img.cover-image {
+	height: 98%;
+	object-fit: contain;
+	width: 100%;
+}
+
+img.cover-image:only-of-type {
+/* overrides the previous setting, but only in newer systems that support CSS3 */
+	height: 98vh;
+}
+
+@media amzn-kf8 {
+/* CSS for KF8 devices */
+	img.cover-image:only-of-type {
+/* overrides the previous setting, but only in newer systems that support CSS3 */
+	height: 98%;
+	}
+}
+
+@media amzn-mobi {
+/* CSS for Mobi devices */
+	img.cover-image:only-of-type {
+/* overrides the previous setting, but only in newer systems that support CSS3 */
+	height: 98%;
+	}
+}
+
+/* Body Images */
+figure{
+    margin-inline-start: .5em;
+    margin-inline-end: .5em;
+}
+
+figure.full img {
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: contain;
+	width: 100%;
+}
+
+figure.left {
+	clear: both;
+	float: left;
+	margin: 1rem 1rem 1rem 0;
+	page-break-inside: avoid;
+	width: 33%;
+}
+
+figure.left:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+figure.right {
+	clear: both;
+	float: right;
+	margin: 1rem 0 1rem 1rem;
+	page-break-inside: avoid;
+	width: 33%;
+}
+
+figure.right:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+figure.center {
+	clear: both;
+	margin: 2rem auto 1rem;
+	text-align: center;
+	width: 60%;
+}
+
+figure.small {
+	clear: both;
+	margin: 2rem auto 1rem;
+	text-align: center;
+	width: 25%;
+}
+
+figure.icon{
+	clear: both;
+	margin: .5rem auto;
+	max-width: 150px;
+	text-align: center;
+	width: 5rem;
+}
+
+figure.author,
+figure.title {
+	clear: both;
+	margin: 2rem auto;
+	text-align: center;
+	width: 50%;
+	max-width:300px;
+}
+
+figure.title img{
+  width: 10em;
+  max-width: 100%;
+  /* Note: KF8 doesn't support max-width hence "width: auto;" as fallback */
+  height: auto;
+  object-fit: contain;
+  vertical-align: bottom;
+}
+
+img.author {
+	border: 3px solid darkblue;
+	border-radius: .5em ;
+	height: auto;
+	width: 100%;
+}
+
+img.float {
+	height: auto;
+	width: 100%;
+}
+
+figcaption {
+	font-family: serif;
+	font-size: 0.8em;
+	font-style: italic;
+	font-variant: normal;
+	font-weight: normal;
+	hyphens: none  !important;
+	-epub-hyphens: none;
+	-moz-hyphens: none  !important;
+	-webkit-hyphens: none  !important;
+	line-height: 1.3;
+	margin: .25em 0;
+	text-align: left;
+	text-indent: 0;
+}
+
+.photo-credit {
+	font-family: serif;
+	font-size: 0.65em;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: uppercase;
+}
+
+/* ASIDES & SIDEBARS */
+
+aside {
+	display: block;
+	margin: 2em auto;
+	overflow: hidden;
+	padding: 0;
+	page-break-inside: avoid;
+}
+
+p.sidebar {
+	font-family: sans-serif;
+	font-size: 0.75em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.5;
+	margin: 0;
+	padding: .5em 1em;
+	text-align: left;
+	text-indent: 1.2em;
+}
+
+p.sidebar:first-of-type {
+	text-indent: 0em;
+}
+
+
+aside.sidebar-1 {
+	border: 5px solid green;
+	border-radius: 15px;
+	background-color: #def2e1;
+	clear: both;
+	width: 65%;
+}
+
+h2.sidebar-1 /* with background */{
+	/*
+		background: url("../image/IMAGE_NAME.png") no-repeat;
+		background-position: top center;
+		background-size: contain;
+	*/
+		background: green;
+		color: #fff;
+		font-family: sans-serif;
+		font-size: 0.85em;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		line-height: 1em;
+		margin: 0 0 .25em;
+		padding: .5em 1em;
+		text-align: left;
+		text-transform: uppercase;
+		width: 100%;
+	}
+
+h3.sidebar-1 {
+	color: green;
+	font-family: sans-serif;
+	font-size: 2em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.25;
+	margin: 0;
+	text-align: left;
+}
+
+
+/* CUSTOM */
+/* Put any file specific code here */
+
+
+
+/* Colours */
+/* all contrast safe */
+
+.f_b {
+	color: #d73b2d; /* orange red */
+}
+
+.ch_1 {
+	color: #d73b2d; /* orange red */
+}
+
+.ch_2 {
+	color: #b95077; /* light purple */
+}
+
+.ch_3 {
+	color: #c64724; /* brick */
+}
+
+.ch_4 {
+	color: #7c7931; /* olive */
+}
+
+.ch_5 {
+	color: #278635; /* green */
+}
+
+.ch_6 {
+	color: #9d6d06; /* burnt umber */
+}
+
+span.bck_1 {
+	background-color: green;
+	padding: .25em;
+}
