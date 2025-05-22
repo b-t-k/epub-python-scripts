@@ -136,4 +136,4 @@ for image in alttext:
     
     # exit()
 
-clean_and_close(Exportfolder,newFileEnding)
+clean_and_close(Exportfolder,newFileEnding, skip_check=True)
